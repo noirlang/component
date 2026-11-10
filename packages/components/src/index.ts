@@ -10,4 +10,5 @@ export { Button, IconButton, type ButtonProps, type ButtonTone, type IconButtonP
 export { Input, Textarea, Field } from './Field'
 export { Checkbox, type CheckboxProps } from './Checkbox'
 export { Switch, type SwitchProps } from './Switch'
+export { Slider, type SliderProps } from './Slider'
 export { Spinner } from './Spinner'
