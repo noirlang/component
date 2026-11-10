@@ -3,8 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="description" content="iOS 27 liquid glass'tan esinlenen, sade ve hareketli React componentleri." />
-    <title>noirLang Components</title>
+    <title>noirLang Components: iOS 27 liquid glass React componentleri</title>
+    <meta name="description" content="iOS 27 liquid glass’tan esinlenen, sade ve hareketli React componentleri. 33 component, düz CSS, açık ve koyu tema. bun add @noirlang/components" />
+    <link rel="canonical" href="%SITE_URL%/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="noirLang" />
+    <meta name="keywords" content="liquid glass, react components, ios 27, glassmorphism, ui kit, react ui kütüphanesi, noirlang" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="noirLang Components" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:url" content="%SITE_URL%/" />
+    <meta property="og:title" content="noirLang Components: liquid glass React componentleri" />
+    <meta property="og:description" content="iOS 27’den esinlenen sade, hareketli arayüz parçaları. Düz CSS, açık ve koyu tema, tek bağımlılık: Motion." />
+    <meta property="og:image" content="%SITE_URL%/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="noirLang Components: cam paneller, anahtarlar ve sekme çubuğu" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="noirLang Components: liquid glass React componentleri" />
+    <meta name="twitter:description" content="iOS 27’den esinlenen sade, hareketli arayüz parçaları. Düz CSS, açık ve koyu tema." />
+    <meta name="twitter:image" content="%SITE_URL%/og.png" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1a1b26" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fffcf0" media="(prefers-color-scheme: light)" />
+
     <script>
       try {
         var t = localStorage.getItem('nc-theme') || 'system'
@@ -12,9 +37,10 @@
         document.documentElement.dataset.theme = t
       } catch (e) {}
     </script>
+    <!--seo-jsonld-->
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--seo-prerender--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
