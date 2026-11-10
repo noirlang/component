@@ -14,3 +14,5 @@ export { Slider, type SliderProps } from './Slider'
 export { Segmented, type SegmentedOption } from './Segmented'
 export { Pill, Kbd, Avatar, AvatarStack, type Tone, type Person } from './Badges'
 export { Spinner } from './Spinner'
+
+export { Dialog, Confirm, type DialogProps } from './Dialog'
