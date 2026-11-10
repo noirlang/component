@@ -7,4 +7,5 @@ export { cx } from './internal/util'
 export * from './icons'
 
 export { Button, IconButton, type ButtonProps, type ButtonTone, type IconButtonProps } from './Button'
+export { Input, Textarea, Field } from './Field'
 export { Spinner } from './Spinner'
