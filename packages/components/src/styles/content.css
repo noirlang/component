@@ -1,0 +1,214 @@
+@layer noir {
+  /* Card */
+  .nc-card {
+    padding: 18px;
+    border: 1px solid var(--nc-line);
+    border-radius: var(--nc-r-lg);
+    background: var(--nc-surface);
+    box-shadow: var(--nc-shadow);
+    color: var(--nc-fg);
+    transition:
+      border-color 0.2s,
+      transform 0.35s var(--nc-ease-spring);
+  }
+  .nc-card[data-interactive] {
+    cursor: pointer;
+  }
+  .nc-card[data-interactive]:hover {
+    border-color: var(--nc-muted);
+    transform: translateY(-2px);
+  }
+  .nc-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .nc-card-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 620;
+    color: var(--nc-bright);
+  }
+  .nc-card-desc {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: var(--nc-dim);
+  }
+
+  /* List / Row */
+  .nc-list-wrap {
+    display: grid;
+    gap: 6px;
+  }
+  .nc-list-note {
+    margin: 0;
+    padding: 0 14px;
+    font-size: 12px;
+    color: var(--nc-dim);
+  }
+  .nc-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    border: 1px solid var(--nc-line);
+    border-radius: var(--nc-r-lg);
+    background: var(--nc-surface);
+  }
+  .nc-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 48px;
+    padding: 8px 14px;
+    border: 0;
+    background: transparent;
+    color: var(--nc-fg);
+    text-align: left;
+    transition: background-color 0.12s;
+  }
+  .nc-list > li + li .nc-row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 14px;
+    height: 1px;
+    background: var(--nc-line);
+  }
+  .nc-list > li + li .nc-row:has(.nc-row-icon)::before {
+    left: 54px;
+  }
+  .nc-row[data-action]:hover {
+    background: color-mix(in oklab, var(--nc-bright) 5%, transparent);
+  }
+  .nc-row[data-action]:active {
+    background: color-mix(in oklab, var(--nc-bright) 9%, transparent);
+  }
+  .nc-row-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    color: var(--nc-on-accent);
+    background: var(--nc-tone);
+  }
+  .nc-row-text {
+    display: grid;
+    flex: 1;
+    min-width: 0;
+  }
+  .nc-row-title {
+    font-size: 14px;
+    color: var(--nc-bright);
+  }
+  .nc-row-sub {
+    font-size: 12px;
+    color: var(--nc-dim);
+  }
+  .nc-row-trailing {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--nc-dim);
+  }
+  .nc-row-chevron {
+    flex-shrink: 0;
+    color: var(--nc-muted);
+  }
+
+  /* Empty */
+  .nc-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 36px 24px;
+    border: 1px dashed var(--nc-line);
+    border-radius: var(--nc-r-lg);
+    text-align: center;
+  }
+  .nc-empty-icon {
+    margin-bottom: 4px;
+    color: var(--nc-dim);
+  }
+  .nc-empty-title {
+    margin: 0;
+    font-weight: 600;
+    color: var(--nc-bright);
+  }
+  .nc-empty-body {
+    max-width: 340px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: var(--nc-dim);
+  }
+
+  /* Skeleton */
+  .nc-skeleton {
+    display: block;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--nc-raised) 0%, color-mix(in oklab, var(--nc-raised) 50%, var(--nc-line)) 50%, var(--nc-raised) 100%) 0 0 / 200% 100%;
+    animation: nc-shimmer 1.6s ease-in-out infinite;
+  }
+  .nc-skeleton-text {
+    display: grid;
+    gap: 8px;
+  }
+  @keyframes nc-shimmer {
+    from {
+      background-position: 100% 0;
+    }
+    to {
+      background-position: -100% 0;
+    }
+  }
+
+  /* Progress */
+  .nc-progress {
+    position: relative;
+    height: 6px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--nc-muted);
+  }
+  .nc-progress-bar {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--nc-accent);
+    transform-origin: left;
+  }
+  .nc-progress[data-indeterminate] .nc-progress-bar {
+    width: 40%;
+    animation: nc-indeterminate 1.3s var(--nc-ease-out) infinite;
+  }
+  @keyframes nc-indeterminate {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(250%);
+    }
+  }
+  .nc-ring {
+    transform: rotate(-90deg);
+  }
+  .nc-ring circle {
+    fill: none;
+  }
+  .nc-ring-track {
+    stroke: var(--nc-muted);
+  }
+  .nc-ring-bar {
+    stroke: var(--nc-accent);
+    stroke-linecap: round;
+  }
+}
