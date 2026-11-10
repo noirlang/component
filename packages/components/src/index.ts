@@ -5,3 +5,6 @@ export { Ambient } from './Ambient'
 export { spring } from './motion'
 export { cx } from './internal/util'
 export * from './icons'
+
+export { Button, IconButton, type ButtonProps, type ButtonTone, type IconButtonProps } from './Button'
+export { Spinner } from './Spinner'
