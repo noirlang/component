@@ -23,3 +23,5 @@ export { Tooltip } from './Tooltip'
 export { Toaster, toast, type ToastInput, type ToastTone } from './Toast'
 
 export { TabBar, type TabBarItem } from './TabBar'
+export { Toolbar, type ToolbarProps } from './Toolbar'
+export { Tabs, type TabItem } from './Tabs'
