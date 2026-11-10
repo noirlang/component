@@ -1,0 +1,6 @@
+/*
+ * noir-components. Everything lives in @layer noir, so unlayered app CSS always wins.
+ * With Tailwind v4 declare the order once: @layer theme, base, noir, components, utilities;
+ */
+@import './tokens.css';
+@import './base.css';

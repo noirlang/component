@@ -1,0 +1,84 @@
+/*
+ * Palette from megaron: "night" (dark, default) and "paper" (light).
+ * Override any token unlayered, e.g. :root { --nc-accent: var(--nc-cyan) }.
+ * A [data-theme] attribute on any element re-themes that subtree.
+ */
+@layer noir {
+  :root,
+  [data-theme='dark'] {
+    --nc-bg: #1a1b26;
+    --nc-sunk: #13141c;
+    --nc-raised: #24283b;
+    --nc-surface: #1f2130;
+    --nc-fg: #a9b1d6;
+    --nc-bright: #c0caf5;
+    --nc-dim: #7f88b3;
+    --nc-muted: #414868;
+    --nc-line: #2c3048;
+    --nc-green: #9ece6a;
+    --nc-cyan: #7dcfff;
+    --nc-red: #f7768e;
+    --nc-magenta: #bb9af7;
+    --nc-orange: #ff9e64;
+    --nc-yellow: #e0af68;
+    --nc-accent: var(--nc-green);
+    --nc-on-accent: #13141c;
+    --nc-focus: var(--nc-cyan);
+    --nc-scrim: rgb(11 12 18 / 0.55);
+    --nc-shadow: 0 1px 0 rgb(255 255 255 / 0.03) inset, 0 12px 32px -12px rgb(0 0 0 / 0.6);
+
+    --nc-glass-bg: rgb(26 27 38 / 0.55);
+    --nc-glass-strong: rgb(19 20 28 / 0.74);
+    --nc-glass-clear: rgb(26 27 38 / 0.14);
+    --nc-glass-border: rgb(192 202 245 / 0.14);
+    --nc-glass-hi: rgb(255 255 255 / 0.16);
+    --nc-glass-edge: rgb(0 0 0 / 0.45);
+    --nc-glass-shadow: 0 18px 40px -18px rgb(0 0 0 / 0.75);
+    --nc-ambient: 0.3;
+    color-scheme: dark;
+  }
+
+  [data-theme='light'] {
+    --nc-bg: #fffcf0;
+    --nc-sunk: #f2f0e5;
+    --nc-raised: #e6e4d9;
+    --nc-surface: #fbf8ec;
+    --nc-fg: #282726;
+    --nc-bright: #100f0f;
+    --nc-dim: #6f6e69;
+    --nc-muted: #cecdc3;
+    --nc-line: #dad8ce;
+    --nc-green: #536607;
+    --nc-cyan: #24837b;
+    --nc-red: #af3029;
+    --nc-magenta: #a02f6f;
+    --nc-orange: #bc5215;
+    --nc-yellow: #ad8301;
+    --nc-accent: var(--nc-green);
+    --nc-on-accent: #fffcf0;
+    --nc-focus: var(--nc-cyan);
+    --nc-scrim: rgb(16 15 15 / 0.22);
+    --nc-shadow: 0 1px 0 rgb(255 255 255 / 0.6) inset, 0 12px 28px -14px rgb(16 15 15 / 0.25);
+
+    --nc-glass-bg: rgb(255 252 240 / 0.58);
+    --nc-glass-strong: rgb(255 252 240 / 0.8);
+    --nc-glass-clear: rgb(255 252 240 / 0.16);
+    --nc-glass-border: rgb(255 255 255 / 0.7);
+    --nc-glass-hi: rgb(255 255 255 / 0.9);
+    --nc-glass-edge: rgb(16 15 15 / 0.1);
+    --nc-glass-shadow: 0 18px 40px -20px rgb(16 15 15 / 0.35);
+    --nc-ambient: 0.28;
+    color-scheme: light;
+  }
+
+  :root {
+    --nc-r-sm: 8px;
+    --nc-r-md: 11px;
+    --nc-r-lg: 16px;
+    --nc-r-xl: 22px;
+    --nc-r-2xl: 28px;
+    --nc-font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, monospace;
+    --nc-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --nc-ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+  }
+}
