@@ -1,3 +1,5 @@
 export { Glass, type GlassProps } from './Glass'
 export { useRefraction, useReducedTransparency, refractionSupported, displacementMap, type RefractionOptions } from './glass/refraction'
+export { spring } from './motion'
 export { cx } from './internal/util'
+export * from './icons'
