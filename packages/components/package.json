@@ -1,0 +1,44 @@
+{
+  "name": "@noirlang/components",
+  "version": "0.1.0",
+  "description": "Liquid glass React components after iOS 27: quiet, animated, plain CSS.",
+  "license": "MIT",
+  "homepage": "https://component.noirlang.tr",
+  "repository": { "type": "git", "url": "git+https://github.com/noirlang/component.git", "directory": "packages/components" },
+  "bugs": "https://github.com/noirlang/component/issues",
+  "keywords": ["react", "components", "liquid-glass", "glass", "ios", "ui", "motion"],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": ["dist", "SKILL.md"],
+  "publishConfig": { "access": "public" },
+  "sideEffects": ["*.css"],
+  "scripts": {
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "motion": "^14.10.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6"
+  }
+}
