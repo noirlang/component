@@ -16,3 +16,4 @@ export { Pill, Kbd, Avatar, AvatarStack, type Tone, type Person } from './Badges
 export { Spinner } from './Spinner'
 
 export { Dialog, Confirm, type DialogProps } from './Dialog'
+export { Sheet, type SheetProps } from './Sheet'
