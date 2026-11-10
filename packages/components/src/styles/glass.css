@@ -1,0 +1,78 @@
+/*
+ * Liquid glass, after iOS 27: blur + saturation, a specular top edge, a darker lower edge
+ * and a sheen across the top-left. useRefraction() swaps the blur for a real lens on Chromium.
+ * Rule: glass is for chrome that floats over content (bars, menus, sheets, toasts), never glass on glass.
+ */
+@layer noir {
+  .nc-glass,
+  .nc-glass-strong {
+    position: relative;
+    isolation: isolate;
+    background: var(--nc-glass-bg);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
+    backdrop-filter: blur(22px) saturate(180%);
+    border: 1px solid var(--nc-glass-border);
+    box-shadow:
+      inset 0 1px 0 var(--nc-glass-hi),
+      inset 0 -14px 24px -18px var(--nc-glass-edge),
+      var(--nc-glass-shadow);
+  }
+  .nc-glass-strong {
+    background: var(--nc-glass-strong);
+  }
+  .nc-glass[data-variant='clear'] {
+    background: var(--nc-glass-clear);
+    -webkit-backdrop-filter: blur(6px) saturate(160%);
+    backdrop-filter: blur(6px) saturate(160%);
+  }
+
+  .nc-glass::before,
+  .nc-glass-strong::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(135deg, var(--nc-glass-hi) 0%, transparent 38%);
+    opacity: 0.35;
+    transition: opacity 0.3s var(--nc-ease-out);
+  }
+  /* Touchable glass: the sheen follows the pointer. */
+  :is(.nc-glass, .nc-glass-strong)[data-interactive]::before {
+    background:
+      radial-gradient(140px circle at var(--nc-mx, 25%) var(--nc-my, 0%), var(--nc-glass-hi), transparent 70%),
+      linear-gradient(135deg, var(--nc-glass-hi) 0%, transparent 38%);
+  }
+  :is(.nc-glass, .nc-glass-strong)[data-interactive]:hover::before {
+    opacity: 0.6;
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    .nc-glass,
+    .nc-glass-strong,
+    .nc-glass[data-variant='clear'] {
+      background: var(--nc-sunk);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
+
+  .nc-ambient {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: var(--nc-ambient);
+  }
+  .nc-ambient[data-contained] {
+    position: absolute;
+    z-index: 0;
+  }
+  .nc-ambient-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+  }
+}
