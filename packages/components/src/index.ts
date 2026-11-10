@@ -8,4 +8,5 @@ export * from './icons'
 
 export { Button, IconButton, type ButtonProps, type ButtonTone, type IconButtonProps } from './Button'
 export { Input, Textarea, Field } from './Field'
+export { Checkbox, type CheckboxProps } from './Checkbox'
 export { Spinner } from './Spinner'
