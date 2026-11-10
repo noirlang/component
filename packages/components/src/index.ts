@@ -21,3 +21,5 @@ export { Popover, type PopoverProps } from './Popover'
 export { Menu, type MenuItem } from './Menu'
 export { Tooltip } from './Tooltip'
 export { Toaster, toast, type ToastInput, type ToastTone } from './Toast'
+
+export { TabBar, type TabBarItem } from './TabBar'

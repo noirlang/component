@@ -1,0 +1,209 @@
+@layer noir {
+  /* TabBar */
+  .nc-tabbar {
+    display: inline-flex;
+    gap: 2px;
+    padding: 5px;
+    border-radius: 999px;
+  }
+  .nc-tabbar-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 64px;
+    min-height: 50px;
+    padding: 6px 12px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--nc-dim);
+    transition: color 0.2s;
+  }
+  .nc-tabbar[data-compact] .nc-tabbar-item {
+    min-width: 46px;
+    min-height: 40px;
+    padding: 6px 10px;
+  }
+  .nc-tabbar-item:hover,
+  .nc-tabbar-item[aria-current='page'] {
+    color: var(--nc-bright);
+  }
+  .nc-tabbar-item[aria-current='page'] {
+    color: var(--nc-accent);
+  }
+  .nc-tabbar-pill {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: color-mix(in oklab, var(--nc-bright) 11%, transparent);
+    box-shadow: inset 0 1px 0 color-mix(in oklab, var(--nc-glass-hi) 60%, transparent);
+  }
+  .nc-tabbar-icon {
+    position: relative;
+    display: inline-grid;
+  }
+  .nc-tabbar-label {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 16px;
+    white-space: nowrap;
+  }
+
+  /* Toolbar */
+  .nc-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 56px;
+    padding: 8px 10px 8px 16px;
+    border-radius: var(--nc-r-xl);
+    color: var(--nc-fg);
+  }
+  .nc-toolbar[data-sticky] {
+    position: sticky;
+    top: 10px;
+    z-index: 50;
+  }
+  .nc-toolbar-side {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nc-toolbar-title {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: 620;
+    color: var(--nc-bright);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .nc-toolbar-trailing {
+    margin-left: auto;
+  }
+
+  /* Tabs */
+  .nc-tablist {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--nc-line);
+    scrollbar-width: none;
+  }
+  .nc-tab {
+    position: relative;
+    height: 40px;
+    padding: 0 12px;
+    border: 0;
+    background: transparent;
+    color: var(--nc-dim);
+    font-size: 14px;
+    font-weight: 550;
+    white-space: nowrap;
+    transition: color 0.15s;
+  }
+  .nc-tab:hover,
+  .nc-tab[aria-selected='true'] {
+    color: var(--nc-bright);
+  }
+  .nc-tab-line {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: -1px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--nc-accent);
+  }
+  .nc-tabpanel {
+    padding-top: 16px;
+    outline: none;
+  }
+
+  /* Command palette */
+  .nc-palette {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 560px;
+    max-height: min(480px, 70dvh);
+    overflow: hidden;
+    border-radius: var(--nc-r-2xl);
+    color: var(--nc-fg);
+  }
+  .nc-palette-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 18px;
+    border-bottom: 1px solid var(--nc-glass-border);
+    color: var(--nc-dim);
+  }
+  .nc-palette-search input {
+    flex: 1;
+    height: 54px;
+    border: 0;
+    background: transparent;
+    color: var(--nc-bright);
+    font: inherit;
+    font-size: 16px;
+    outline: none;
+  }
+  .nc-palette-search input::placeholder {
+    color: var(--nc-dim);
+  }
+  .nc-palette-list {
+    flex: 1;
+    overflow-y: auto;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    overscroll-behavior: contain;
+  }
+  .nc-palette-group {
+    margin: 0;
+    padding: 10px 12px 4px;
+    font-size: 11px;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--nc-dim);
+  }
+  .nc-palette-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 14px;
+    color: var(--nc-bright);
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .nc-palette-item > :not(.nc-palette-hl) {
+    position: relative;
+  }
+  .nc-palette-hl {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: color-mix(in oklab, var(--nc-bright) 10%, transparent);
+  }
+  .nc-palette-icon {
+    display: inline-grid;
+    color: var(--nc-dim);
+  }
+  .nc-palette-empty {
+    padding: 28px 12px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--nc-dim);
+  }
+}
