@@ -17,3 +17,4 @@ export { Spinner } from './Spinner'
 
 export { Dialog, Confirm, type DialogProps } from './Dialog'
 export { Sheet, type SheetProps } from './Sheet'
+export { Popover, type PopoverProps } from './Popover'
