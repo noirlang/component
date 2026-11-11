@@ -75,7 +75,7 @@ Tüm `onChange` callback'leri **değeri** verir, event'i değil: `onChange={setO
 
 | Export | Kullanım |
 |---|---|
-| `Glass` | `as?` (eleman, varsayılan `div`), `strong?` (yoğun tint), `variant?: 'regular' \| 'clear'`, `refract?: boolean \| RefractionOptions` (varsayılan açık), `interactive?` (parıltı imleci izler) + tüm HTML attribute'ları. Boyut, radius ve padding'i sen verirsin. |
+| `Glass` | `as?` (eleman, varsayılan `div`; o elemanın attribute'ları da geçer, ör. `as="a" href="/news"`), `strong?` (yoğun tint), `variant?: 'regular' \| 'clear'`, `refract?: boolean \| RefractionOptions` (varsayılan açık), `interactive?` (parıltı imleci izler) + tüm HTML attribute'ları. Boyut, radius ve padding'i sen verirsin. |
 | `useRefraction(ref, opts?)` | Kendi elemanına kırılma ekler. `opts`: `enabled`, `bezel` (18), `strength` (22), `blur` (6), `saturate` (1.7). Elemanın `nc-glass` sınıfı ve bir `border-radius`'u olmalı. |
 | `refractionSupported` | Tarayıcı kırılmayı çizebiliyor mu (Chromium). |
 | `useReducedTransparency()` | Kullanıcı saydamlığı azalttıysa `true`. |

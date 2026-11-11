@@ -1,8 +1,9 @@
-import { forwardRef, useRef, type ElementType, type HTMLAttributes, type PointerEvent } from 'react'
+import { forwardRef, useRef, type AllHTMLAttributes, type ElementType, type PointerEvent } from 'react'
 import { useRefraction, type RefractionOptions } from './glass/refraction'
 import { cx, mergeRefs } from './internal/util'
 
-export type GlassProps = HTMLAttributes<HTMLElement> & {
+/** Any HTML attribute is accepted, so `as="a"` can take href/target/rel, `as="button"` type, and so on. */
+export type GlassProps = Omit<AllHTMLAttributes<HTMLElement>, 'as'> & {
   as?: ElementType
   /** Denser tint for surfaces that carry a lot of text (menus, dialogs). */
   strong?: boolean

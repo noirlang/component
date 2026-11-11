@@ -1,6 +1,6 @@
 {
   "name": "@noirlang/components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Liquid glass React components after iOS 27: quiet, animated, plain CSS.",
   "license": "MIT",
   "homepage": "https://component.noirlang.tr",
